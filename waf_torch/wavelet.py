@@ -20,7 +20,7 @@ class WaveletTorch(AtomicKernel):
         """
         waf_list = ['up', 'upm', 'meyer4', 'meyer6']
         if waf not in waf_list:
-            raise ValueError('waf must be "up", "upm", "meyer4" or "meyer6"')
+            raise ValueError('waf_torch must be "up", "upm", "meyer4" or "meyer6"')
         self.coef = coef
         self.waf = waf
 
@@ -108,7 +108,7 @@ class WaveletTorch(AtomicKernel):
             return result ** 2
 
         else:
-            raise ValueError('waf must be "up", "upm", "meyer4" or "meyer6"')
+            raise ValueError('waf_torch must be "up", "upm", "meyer4" or "meyer6"')
 
     def phi_f(self, x: torch.Tensor) -> torch.Tensor:
         """

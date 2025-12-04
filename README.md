@@ -5,7 +5,7 @@
 ## Modules
 
 ### Kernel Functions
-**File:** [kernel.py](./waf/kernel.py)
+**File:** [kernel.py](waf_torch/kernel.py)
 
 Module of continuous atomic functions. Contains the `atomic_kernel` class for computing:
 - Atomic functions and their properties
@@ -30,7 +30,7 @@ Module of continuous atomic functions. Contains the `atomic_kernel` class for co
 ![Kernel Functions](images/kernel.svg)
 
 ### Window Functions
-**File:** [window.py](./waf/window.py)
+**File:** [window.py](waf_torch/window.py)
 
 Module of window functions based on atomic kernels.
 
@@ -45,7 +45,7 @@ Module of window functions based on atomic kernels.
 ![Window Functions](images/window.svg)
 
 ### Wavelet Functions
-**File:** [wavelet.py](./waf/wavelet.py)
+**File:** [wavelet.py](waf_torch/wavelet.py)
 
 Module for wavelets constructed from atomic functions.
 

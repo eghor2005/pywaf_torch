@@ -1,37 +1,72 @@
 # waf with torch
-## version 1.0.0 
+## Version 1.0.0 
 04.12.25
 
-Модуль| Описание
-|:--:|:---|
-[kernel.py](./waf/kernel.py)| Модуль непрерывных атомарных функций. Содержит класс **atomic_kernel**, который позволяет вычислять атомарные функции, а также их Фурье-образы и производные. Основным параметром является массив точек, в которых вычисляется значение функции, также возможна настройка числа слагаемых **nsum** и множителей **nprod**, используемых при вычислении функции.
+## Modules
 
-На данный момент реализованы:
-- $\mathrm{up}(x)$, 
-- $\mathrm{up_m}(x)$, 
-- $\mathrm{h_a}(x)$, 
-- $\mathrm{\xi_n}(x)$, 
-- $\mathrm{fup_n}(x)$, 
-- $\mathrm{ch_{a,n}}(x)$, 
-- $\mathrm{fip_{a,n}}(x)$, 
-- $\mathrm{fp_{m,n}}(x)$. 
+### Kernel Functions
+**File:** [kernel.py](./waf/kernel.py)
 
-<img src="images/kernel.svg">
+Module of continuous atomic functions. Contains the `atomic_kernel` class for computing:
+- Atomic functions and their properties
+- Fourier transforms
+- Derivatives
 
-Модуль| Описание
-|:--:|:---|
-[window.py](./waf/window.py)| Модуль весовых функций, построенных на основе атомарных. Основным аргументом является ширина окна **N**, также возможна настройка нормировки функций при помощь параметра **mode**. 
+**Main parameters:**
+- `x`: Array of evaluation points
+- `nsum`: Number of summation terms (default: 50)
+- `nprod`: Number of multiplication factors (default: 10)
 
-<img src="images/window.svg">
+**Implemented functions:**
+- `up(x)`
+- `up_m(x)`
+- `h_a(x)`
+- `ξ_n(x)`
+- `fup_n(x)`
+- `ch_{a,n}(x)`
+- `fip_{a,n}(x)`
+- `fp_{m,n}(x)`
 
-Модуль| Описание
-|:--:|:---|
-[wavelet.py](./waf/wavelet.py)| Модуль вейвлетов, построенных на атомарных функциях. Содержит класс **wavelet**, с помощью которого вычисляются вейвлет, масштабирующая функция, коэффициенты разложения и восстановления, а также другие промежуточные функции. 
+![Kernel Functions](images/kernel.svg)
 
-На данный момент реализованы вейвлеты:
-- оригинальный Мейера,
-- на основе $\mathrm{up}(x)$, 
-- на основе $\mathrm{up_m}(x)$.
+### Window Functions
+**File:** [window.py](./waf/window.py)
 
-<img src="images/waf_upm.svg">
+Module of window functions based on atomic kernels.
 
+**Main parameters:**
+- `N`: Window width
+- `mode`: Normalization mode
+
+**Features:**
+- Configurable normalization
+- Various window types based on atomic functions
+
+![Window Functions](images/window.svg)
+
+### Wavelet Functions
+**File:** [wavelet.py](./waf/wavelet.py)
+
+Module for wavelets constructed from atomic functions.
+
+**Class:** `wavelet`
+
+**Capabilities:**
+- Wavelet computation
+- Scaling functions
+- Decomposition coefficients
+- Reconstruction coefficients
+- Intermediate function computation
+
+**Implemented wavelets:**
+1. Original Meyer wavelet
+2. up(x)-based wavelet
+3. up_m(x)-based wavelet
+
+![Wavelet Functions](images/waf_upm.svg)
+
+## Installation
+
+```bash
+pip install torch
+# Clone repository for waf module

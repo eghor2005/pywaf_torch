@@ -68,5 +68,5 @@ Module for wavelets constructed from atomic functions.
 ## Installation
 
 ```bash
-pip install torch
+pip install pywaf_torch
 # Clone repository for waf module

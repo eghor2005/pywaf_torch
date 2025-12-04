@@ -1,4 +1,4 @@
-# waf with torch
+# waf by torch
 ## Version 1.0.0 
 04.12.25
 

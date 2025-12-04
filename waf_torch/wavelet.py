@@ -8,7 +8,7 @@ except ImportError:
     from kernel import AtomicKernel
 
 
-class WaveletTorch(AtomicKernel):
+class Wavelet(AtomicKernel):
 
     def __init__(self, waf: str, coef: int = 2):
         """
